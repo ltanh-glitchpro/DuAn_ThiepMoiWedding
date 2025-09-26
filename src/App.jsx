@@ -2,9 +2,25 @@ import FallingHearts from "./components/FallingHearts";
 import BackgroundMusic from "./BackgroundMusic";
 import RSVPForm from "./components/RSVPForm"
 
-import qrBank from "./assets/QR_Bank.jpg";
+
+import { useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [copySuccess, setCopySuccess] = useState("");
+
+  // Thông tin chuyển khoản mẫu, bạn chỉnh lại cho đúng
+  const bankInfo = {
+    bank: "MB Bank",
+    account: "19771976270105",
+    name: "LE TUAN ANH"
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`${bankInfo.bank} - ${bankInfo.account} - ${bankInfo.name}`);
+    setCopySuccess("Đã copy!");
+    setTimeout(() => setCopySuccess(""), 2000);
+  };
   return (
     <div className="min-h-screen bg-pink-50 flex flex-col items-center justify-center">
       {/* Nhạc nền và nút điều khiển */}
@@ -47,10 +63,36 @@ function App() {
           <RSVPForm />
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center">
-          <a href={qrBank} target="_blank" rel="noopener noreferrer">
-            <img src={qrBank} alt="QR chuyển khoản" className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow cursor-pointer hover:scale-105 transition-transform duration-200" />
-          </a>
+          <img
+            src={"/assets/QR_Bank.jpg"}
+            alt="QR chuyển khoản"
+            className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow cursor-pointer hover:scale-105 transition-transform duration-200"
+            onClick={() => setShowModal(true)}
+          />
         </div>
+
+      {/* Modal chuyển khoản */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50" onClick={() => setShowModal(false)}>
+          <div className="bg-white rounded-xl p-6 shadow-lg max-w-xs w-full relative" onClick={e => e.stopPropagation()}>
+            <button className="absolute top-2 right-2 text-gray-500 text-xl" onClick={() => setShowModal(false)}>&times;</button>
+            <img src={"/assets/QR_Bank.jpg"} alt="QR chuyển khoản" className="w-56 h-56 object-contain rounded-lg mx-auto mb-4 border border-pink-200" />
+            <div className="text-center mb-2">
+              <div className="font-semibold text-pink-700">Thông tin chuyển khoản</div>
+              <div className="text-base text-gray-700">Ngân hàng: {bankInfo.bank}</div>
+              <div className="text-base text-gray-700">Số tài khoản: {bankInfo.account}</div>
+              <div className="text-base text-gray-700">Chủ tài khoản: {bankInfo.name}</div>
+            </div>
+            <button
+              className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full mt-2"
+              onClick={handleCopy}
+            >
+              Copy thông tin chuyển khoản
+            </button>
+            {copySuccess && <div className="text-green-600 text-sm mt-2 text-center">{copySuccess}</div>}
+          </div>
+        </div>
+      )}
       </div>
     </div>
   )
