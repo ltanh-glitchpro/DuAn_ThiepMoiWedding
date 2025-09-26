@@ -16,9 +16,14 @@ function App() {
       <h2 className="text-2xl font-semibold text-pink-600 mb-2">
         Tuấn Anh 💍 Kiều Nhi
       </h2>
-      <p className="text-base text-gray-600 mb-8">
-        Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi
-      </p>
+      <div className="text-base text-gray-600 mb-8 text-center">
+        <div>
+          Trân trọng kính mời bạn!
+        </div>
+        <div>
+          Mong bạn đến tham dự lễ cưới của chúng tôi!
+        </div>
+      </div>
 
       <div className="bg-white shadow-lg rounded-2xl p-6 w-80 text-center">
         <p>📅 Ngày: 12/12/2025</p>
