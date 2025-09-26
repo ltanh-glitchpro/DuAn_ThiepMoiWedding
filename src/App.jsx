@@ -1,4 +1,3 @@
-import FallingFlowers from "./components/FallingFlowers";
 import FallingHearts from "./components/FallingHearts";
 import BackgroundMusic from "./BackgroundMusic";
 import RSVPForm from "./components/RSVPForm"
@@ -10,8 +9,6 @@ function App() {
       <BackgroundMusic />
       {/* Hiệu ứng rơi tim */}
       <FallingHearts />
-      {/* Hiệu ứng rơi hoa */}
-      <FallingFlowers />
       {/*Nội dung chính của trang */}
       <h1 className="text-4xl font-bold text-pink-700 mb-4">
         Thiệp Cưới
@@ -19,7 +16,7 @@ function App() {
       <h2 className="text-2xl font-semibold text-pink-600 mb-2">
         Tuấn Anh 💍 Kiều Nhi
       </h2>
-      <p className="text-lg text-gray-600 mb-8">
+      <p className="text-base text-gray-600 mb-8">
         Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi
       </p>
 
