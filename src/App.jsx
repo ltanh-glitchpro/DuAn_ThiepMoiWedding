@@ -47,7 +47,9 @@ function App() {
           <RSVPForm />
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center">
-          <img src={qrBank} alt="QR chuyển khoản" className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow" />
+          <a href={qrBank} target="_blank" rel="noopener noreferrer">
+            <img src={qrBank} alt="QR chuyển khoản" className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow cursor-pointer hover:scale-105 transition-transform duration-200" />
+          </a>
         </div>
       </div>
     </div>
