@@ -66,9 +66,15 @@ function App() {
           <img
             src={"/assets/QR_Bank.jpg"}
             alt="QR chuyển khoản"
-            className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow cursor-pointer hover:scale-105 transition-transform duration-200"
+            className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow mb-2 cursor-pointer hover:scale-105 transition-transform duration-200"
             onClick={() => setShowModal(true)}
           />
+          <button
+            className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full mt-2 text-base"
+            onClick={() => setShowModal(true)}
+          >
+            Xem thông tin chuyển khoản
+          </button>
         </div>
 
       {/* Modal chuyển khoản */}
