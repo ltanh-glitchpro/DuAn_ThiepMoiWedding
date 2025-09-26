@@ -43,7 +43,7 @@ function App() {
 
       {/* Form xác nhận tham dự và mã QR chuyển khoản */}
       <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-8 mb-8 w-full max-w-xl">
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0 flex flex-col items-center">
           <RSVPForm />
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center">
