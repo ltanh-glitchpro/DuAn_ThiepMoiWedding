@@ -42,12 +42,12 @@ function App() {
       </div>
 
       {/* Form xác nhận tham dự và mã QR chuyển khoản */}
-      <div className="flex flex-row items-start justify-center gap-8 mb-8">
-        <div className="flex-1">
+      <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-8 mb-8 w-full max-w-xl">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <RSVPForm />
         </div>
-        <div className="flex flex-col items-center">
-          <img src={qrBank} alt="QR chuyển khoản" className="w-48 h-48 object-contain rounded-lg border border-pink-200 shadow" />
+        <div className="w-full md:w-1/2 flex flex-col items-center">
+          <img src={qrBank} alt="QR chuyển khoản" className="w-40 h-40 md:w-48 md:h-48 object-contain rounded-lg border border-pink-200 shadow" />
         </div>
       </div>
     </div>
