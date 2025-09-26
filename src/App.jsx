@@ -70,7 +70,7 @@ function App() {
             onClick={() => setShowModal(true)}
           />
           <button
-            className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg w-full mt-2 text-base"
+            className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-1 rounded-lg mt-2 text-base mx-auto block min-w-[120px] max-w-[200px]"
             onClick={() => setShowModal(true)}
           >
             Xem thông tin chuyển khoản
